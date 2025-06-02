@@ -1,0 +1,58 @@
+[
+  {
+    "model": "gestion_reciclaje.material",
+    "pk": "PAP",
+    "fields": {
+      "nombre": "Papel y cartón",
+      "descripcion": "Incluye cajas, hojas, periódicos, cuadernos (sin espirales ni plásticos)."
+    }
+  },
+  {
+    "model": "gestion_reciclaje.material",
+    "pk": "PLAS",
+    "fields": {
+      "nombre": "Plásticos reciclables",
+      "descripcion": "Botellas PET, envases de alimentos, tapas plásticas. No se aceptan bolsas ni film."
+    }
+  },
+  {
+    "model": "gestion_reciclaje.material",
+    "pk": "VID",
+    "fields": {
+      "nombre": "Vidrios",
+      "descripcion": "Botellas y frascos sin tapa. No se reciben vidrios rotos ni espejos."
+    }
+  },
+  {
+    "model": "gestion_reciclaje.material",
+    "pk": "LAT",
+    "fields": {
+      "nombre": "Latas",
+      "descripcion": "Latas de aluminio y hojalata, como bebidas o conservas."
+    }
+  },
+  {
+    "model": "gestion_reciclaje.material",
+    "pk": "ELEC",
+    "fields": {
+      "nombre": "Electrónicos pequeños",
+      "descripcion": "Celulares, tablets, teclados, cargadores. No se aceptan refrigeradores ni TV."
+    }
+  },
+  {
+    "model": "gestion_reciclaje.material",
+    "pk": "TEX",
+    "fields": {
+      "nombre": "Textiles",
+      "descripcion": "Ropa en buen estado, sábanas, cortinas. No se aceptan prendas sucias o rotas."
+    }
+  },
+  {
+    "model": "gestion_reciclaje.material",
+    "pk": "VOL",
+    "fields": {
+      "nombre": "Voluminosos reciclables",
+      "descripcion": "Muebles, colchones, bicicletas, palets."
+    }
+  }
+]

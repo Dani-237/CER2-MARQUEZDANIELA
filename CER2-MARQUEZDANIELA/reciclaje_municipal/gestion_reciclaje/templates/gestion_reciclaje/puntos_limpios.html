@@ -1,0 +1,52 @@
+{% extends 'gestion_reciclaje/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">Puntos Limpios</h2>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Ubicaciones de Puntos Limpios</h4>
+            <p>Aquí encontrarás información sobre los puntos limpios disponibles en tu comuna:</p>
+            
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Dirección</th>
+                            <th>Horario</th>
+                            <th>Materiales Aceptados</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Punto Limpio Central</td>
+                            <td>Av. Principal 1234</td>
+                            <td>Lunes a Viernes 9:00 - 18:00</td>
+                            <td>Papel, Cartón, Vidrio, Plástico</td>
+                        </tr>
+                        <tr>
+                            <td>Punto Limpio Norte</td>
+                            <td>Calle Secundaria 567</td>
+                            <td>Martes a Sábado 10:00 - 17:00</td>
+                            <td>Vidrio, Metal, Plástico</td>
+                        </tr>
+                        <tr>
+                            <td>Punto Limpio Sur</td>
+                            <td>Pasaje Verde 890</td>
+                            <td>Miércoles a Domingo 8:00 - 16:00</td>
+                            <td>Papel, Cartón, Pilas, Electrónicos</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="alert alert-info mt-4">
+                <i class="bi bi-info-circle-fill"></i> Recuerda llevar tus materiales limpios y secos para facilitar el reciclaje.
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

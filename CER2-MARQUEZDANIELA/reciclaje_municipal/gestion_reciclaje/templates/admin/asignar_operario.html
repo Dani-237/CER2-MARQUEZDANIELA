@@ -1,0 +1,23 @@
+html
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Asignar Operario a {{ solicitudes.count }} solicitud(es)</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="hidden" name="apply" value="true">
+        
+        <h4>Solicitudes seleccionadas:</h4>
+        <ul>
+            {% for solicitud in solicitudes %}
+            <li>SR-{{ solicitud.id }} - {{ solicitud.material }} ({{ solicitud.ciudadano }})</li>
+            {% endfor %}
+        </ul>
+        
+        <button type="submit" class="btn btn-success">Confirmar Asignación</button>
+        <a href="{% url 'admin:gestion_reciclaje_solicitudretiro_changelist' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

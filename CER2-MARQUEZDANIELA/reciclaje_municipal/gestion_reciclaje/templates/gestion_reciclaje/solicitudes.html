@@ -1,0 +1,54 @@
+{% extends 'gestion_reciclaje/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Mis Solicitudes de Retiro</h2>
+    
+    {% if solicitudes %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Material</th>
+                <th>Cantidad</th>
+                <th>Fecha Solicitud</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for solicitud in solicitudes %}
+            <tr>
+                <td>{{ solicitud.id }}</td>
+                <td>{{ solicitud.material.nombre }}</td>
+                <td>{{ solicitud.cantidad }}</td>
+                <td>{{ solicitud.fecha_solicitud|date:"d/m/Y" }}</td>
+                <td>
+                    {% if solicitud.estado == 'PEN' %}
+                        <span style="color: #ff7300;">
+                            {{ solicitud.get_estado_display }}
+                        </span>
+                    {% elif solicitud.estado == 'RUT' %}
+                        <span style="color: #0000FF;">
+                            {{ solicitud.get_estado_display }}
+                        </span>
+                    {% else %}
+                        <span style="color: #008000;">
+                            {{ solicitud.get_estado_display }}
+                        </span>
+                    {% endif %}
+                </td>
+                <td><a href="{% url 'detalle_solicitud' solicitud.id %}">Ver detalle</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No tienes solicitudes registradas.</p>
+    {% endif %}
+    
+    <div class="mt-3">
+        <a href="{% url 'index' %}" class="btn">Volver al inicio</a>
+    </div>
+</div>
+{% endblock %}

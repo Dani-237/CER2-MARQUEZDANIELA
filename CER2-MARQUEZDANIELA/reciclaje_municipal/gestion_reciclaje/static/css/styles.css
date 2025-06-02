@@ -1,0 +1,77 @@
+/* Estilos base */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    padding: 0.5rem 1rem;
+}
+.navbar-brand {
+    font-weight: 600;
+}
+
+/* Mensajes */
+.alert {
+    border-radius: 0.25rem;
+}
+
+/* Página de inicio */
+.welcome-card {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 1.5rem;
+}
+.welcome-header {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+}
+.welcome-header h2 {
+    color: #2e7d32;
+    margin-bottom: 0;
+}
+.welcome-body {
+    padding: 1.5rem;
+}
+.feature-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+.feature-list li {
+    padding: 0.4rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.6;
+    color: #333;
+}
+.feature-list li:before {
+    content: "✓";
+    color: #2e7d32;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+.action-buttons {
+    margin-top: 1.5rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .welcome-body {
+        padding: 1.25rem;
+    }
+    .action-buttons .btn {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+    .feature-list li {
+        padding-left: 1.25rem;
+    }
+}

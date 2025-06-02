@@ -1,0 +1,72 @@
+{% extends 'gestion_reciclaje/base.html' %}
+
+{% block content %}
+<div class="container">
+
+    <div class="welcome-card">
+        <div class="welcome-header">
+            <h2 class="mb-0 text-center">Bienvenido al Sistema de Gestión de Reciclaje</h2>
+        </div>
+        <div class="welcome-body">
+            <h4 class="card-title text-center mb-4">¿Qué puedes hacer aquí?</h4>
+            <ul class="feature-list">
+                <li>Consultar los materiales aceptados para reciclaje</li>
+                <li>Registrar solicitudes de retiro de materiales</li>
+                <li>Revisar el estado de tus solicitudes</li>
+                <li>Conocer las métricas de reciclaje de la municipalidad</li>
+                <li>Encontrar puntos limpios cerca de ti</li>
+                <li>Aprender recomendaciones para reciclar correctamente</li>
+            </ul>
+            
+            <div class="action-buttons">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <a href="{% url 'materiales' %}" class="btn btn-primary btn-block">
+                            <i class="bi bi-recycle me-2"></i> Ver Materiales Aceptados
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="{% url 'metricas' %}" class="btn btn-success btn-block">
+                            <i class="bi bi-graph-up me-2"></i> Ver Métricas de Reciclaje
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="row g-3 mt-2">
+                    <div class="col-md-6">
+                        <a href="{% url 'puntos_limpios' %}" class="btn btn-info btn-block text-white">
+                            <i class="bi bi-geo-alt me-2"></i> Puntos Limpios
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="{% url 'recomendaciones' %}" class="btn btn-primary btn-block text-white">
+                            <i class="bi bi-lightbulb me-2"></i> Recomendaciones
+                        </a>
+                    </div>
+                </div>
+                
+                {% if user.is_authenticated and user.ciudadano %}
+                <div class="row g-3 mt-2">
+                    <div class="col-md-6">
+                        <a href="{% url 'solicitudes' %}" class="btn btn-secondary btn-block text-white">
+                            <i class="bi bi-list-check me-2"></i> Mis Solicitudes
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="{% url 'nueva_solicitud' %}" class="btn btn-success btn-block">
+                            <i class="bi bi-plus-circle me-2"></i> Crear Solicitud
+                        </a>
+                    </div>
+                </div>
+                {% elif user.is_authenticated %}
+                <div class="text-center mt-3">
+                    <a href="{% url 'solicitudes' %}" class="btn btn-secondary text-white">
+                        <i class="bi bi-list-check me-2"></i> Mis Solicitudes
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

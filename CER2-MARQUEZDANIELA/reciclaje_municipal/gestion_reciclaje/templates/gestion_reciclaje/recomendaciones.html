@@ -1,0 +1,70 @@
+{% extends 'gestion_reciclaje/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header bg-success text-white">
+            <h2 class="mb-0">Recomendaciones para Reciclar</h2>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Consejos y Buenas Prácticas</h4>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0">Preparación de Materiales</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Lavar y secar envases antes de reciclarlos</li>
+                                <li>Aplastar latas y botellas para ahorrar espacio</li>
+                                <li>Retirar tapas de botellas de plástico</li>
+                                <li>Separar materiales por tipo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0">Qué NO Reciclar</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Envases con restos de comida</li>
+                                <li>Papel o cartón manchado con grasa</li>
+                                <li>Vidrios rotos o espejos</li>
+                                <li>Pañales o productos higiénicos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">Beneficios del Reciclaje</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <i class="bi bi-tree-fill text-success" style="font-size: 2rem;"></i>
+                            <p>Reduce la deforestación</p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi bi-droplet-fill text-primary" style="font-size: 2rem;"></i>
+                            <p>Ahorra agua</p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi bi-lightning-fill text-warning" style="font-size: 2rem;"></i>
+                            <p>Disminuye el consumo de energía</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

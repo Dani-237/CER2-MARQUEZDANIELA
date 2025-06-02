@@ -1,0 +1,29 @@
+{% extends "gestion_reciclaje/base.html" %}
+{% block content %}
+<div class="container mt-4">
+  <h2>Métricas de Reciclaje</h2>
+
+  <h4>Solicitudes por mes</h4>
+  <ul>
+    {% for item in solicitudes_por_mes %}
+      <li>{{ item.mes|date:"F Y" }}: {{ item.total }} solicitudes</li>
+    {% endfor %}
+  </ul>
+
+  <h4>Materiales más reciclados</h4>
+  <ul>
+    {% for material in materiales_mas_reciclados %}
+      <li>{{ material.material__nombre }}: {{ material.total }} solicitudes</li>
+    {% endfor %}
+  </ul>
+
+  <h4>Tiempo promedio de retiro</h4>
+  <p>
+    {% if tiempo_promedio_dias %}
+      {{ tiempo_promedio_dias }} días (entre solicitud y fecha estimada)
+    {% else %}
+      No hay datos suficientes para calcularlo.
+    {% endif %}
+  </p>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'gestion_reciclaje/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Materiales Aceptados para Reciclaje</h2>
+    
+    <div class="row">
+        {% for material in materiales %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ material.nombre }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Código: {{ material.codigo }}</h6>
+                    <p class="card-text">{{ material.descripcion }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
